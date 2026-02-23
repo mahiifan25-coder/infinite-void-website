@@ -1,2 +1,126 @@
 # infinite-void-website
 Infinite Void — Premium thrift &amp; streetwear e-commerce website for Bangladesh 
+
+export default function InfiniteVoidWebsite() {
+  const products = [
+    {
+      name: "Vintage Street T-Shirt",
+      price: "550 BDT",
+      desc: "Size L | Condition 9/10"
+    },
+    {
+      name: "Anime Void Edition Tee",
+      price: "750 BDT",
+      desc: "Size M | Limited Drop"
+    },
+    {
+      name: "Premium Hoodie Drop",
+      price: "1200 BDT",
+      desc: "Size XL | Authentic Quality"
+    },
+    {
+      name: "Streetwear Classic Shirt",
+      price: "900 BDT",
+      desc: "Size L | New Arrival"
+    },
+    {
+      name: "Thrift Oversized Tee",
+      price: "650 BDT",
+      desc: "Size Free | Trend Style"
+    },
+    {
+      name: "Limited Void Collection",
+      price: "1500 BDT",
+      desc: "Special Drop | Premium Piece"
+    }
+  ];
+
+  const messengerLink = "https://m.me/yourpageusername";
+
+  const backgroundImage = "https://images.unsplash.com/photo-1500336624523-d727130c3328";
+
+  return (
+    <div
+      className="min-h-screen bg-black text-white font-sans bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="backdrop-blur-xl bg-black/70 min-h-screen">
+        {/* Hero Section */}
+        <header className="p-8 grid md:grid-cols-2 gap-10 items-center">
+          <div className="space-y-6 animate-pulse">
+            <h1 className="text-6xl font-bold tracking-widest">INFINITE VOID</h1>
+            <p className="text-lg text-gray-300">
+              Premium thrift & streetwear collection 🖤
+              <br />
+              Limited drops | Authentic pieces | Affordable price
+            </p>
+            <a
+              href="#products"
+              className="inline-block px-6 py-3 bg-white text-black rounded-2xl shadow-lg hover:opacity-80 transition"
+            >
+              Shop Now
+            </a>
+          </div>
+        </header>
+
+        {/* Search Section */}
+        <section className="p-6 text-center">
+          <input
+            type="text"
+            placeholder="Search products..."
+            className="w-full md:w-1/2 p-3 rounded-xl bg-gray-900 border border-gray-700 focus:outline-none"
+          />
+        </section>
+
+        {/* Products Section */}
+        <section id="products" className="p-6 grid md:grid-cols-3 gap-6">
+          {products.map((item, index) => (
+            <div
+              key={index}
+              className="bg-gray-900/90 p-5 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
+            >
+              <div className="h-48 bg-gray-800 rounded-xl mb-4 flex items-center justify-center">
+                <span className="text-gray-500">Product Image</span>
+              </div>
+              <h3 className="font-semibold text-lg">{item.name}</h3>
+              <p className="text-gray-400 text-sm">{item.desc}</p>
+              <p className="mt-2 font-bold">{item.price}</p>
+
+              <a
+                href={messengerLink}
+                className="block mt-4 text-center bg-white text-black py-2 rounded-xl hover:opacity-80 transition"
+              >
+                Order Now 📩
+              </a>
+            </div>
+          ))}
+        </section>
+
+        {/* Delivery Info */}
+        <section className="p-8 text-center bg-gray-900/80 m-6 rounded-2xl backdrop-blur-lg">
+          <h2 className="text-2xl font-bold mb-4">Delivery Information 🇧🇩</h2>
+          <p className="text-gray-300">
+            We provide delivery all over Bangladesh.
+            Rajshahi local delivery available 🚚
+          </p>
+        </section>
+
+        {/* Contact Section */}
+        <section className="p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+          <a
+            href={messengerLink}
+            className="px-6 py-3 bg-white text-black rounded-2xl inline-block hover:opacity-80 transition"
+          >
+            Message on Messenger 📩
+          </a>
+        </section>
+
+        {/* Footer */}
+        <footer className="p-6 text-center text-gray-500 text-sm">
+          © 2026 Infinite Void | Rajshahi, Bangladesh
+        </footer>
+      </div>
+    </div>
+  );
+}
